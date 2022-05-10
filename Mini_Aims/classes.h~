@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+enum DeptAll{A, B, C, D, E};
+
+typedef enum DeptAll DeptList;
+
+class Course{
+ private:
+  string name;
+  string ID;
+  bool floating;
+  friend ostream& operator << (ostream& outfile, const Course& sample);
+  friend istream& operator >> (istream& infile, Course& sample);
+ public:
+  void showAllCourses();
+  void putCourseFile();
+  void tempCourseFile();
+  void getCourse();
+  void printCourse();
+  int findCourse(string C_Name);
+  void delCourse(string C_Name);	
+};
+
+class Person{
+ private:
+  string name;
+  string ID;
+  string password;
+  int chkPassword();
+  void addPersonFile();
+  friend ostream& operator << (ostream& outfile, const Person& sample);
+  friend istream& operator >> (istream& infile, Person& temp);
+ public:
+  void getPerson();
+  void printPerson();
+  void changePassword();
+};
+
+class Admin : public Person{
+public:
+  void addCourseData();
+  void showAllPersons();
+};
